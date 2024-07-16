@@ -1,0 +1,33 @@
+{% extends 'mutalfund_calculator/layout.html' %}
+{% load static %}
+
+{% block body %}
+<div class="container">
+    <h1>Mutual Fund</h1>
+    <h1>Compound Interest Calculator</h1>
+
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+    <form id="calculator-form">
+        <label for="initial_investment">Initial investment</label>
+        <input type="number" name="initial_investment" id="initial_investment" required>
+
+        <label for="monthly_contribution">Monthly contribution</label>
+        <input type="number" name="monthly_contribution" id="monthly_contribution" required>
+
+        <label for="annual_interest">Annual Interest</label>
+        <input type="number" name="annual_interest" id="annual_interest" step="0.01" required>
+
+        <label for="years">Number of years</label>
+        <input type="number" name="years" id="years" required>
+
+        <input type="submit" value="Calculate">
+    </form>
+    <div id="result">
+        <h2>Result</h2>
+        <div id="result-content"></div>
+    </div>
+</div>
+
+<script src="{% static 'js/scripts.js' %}"></script>
+{% endblock %}
